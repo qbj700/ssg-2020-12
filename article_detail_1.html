@@ -34,7 +34,7 @@
 						</a></li>
 						<li><a class="block"> <i class="fas fa-list"></i> <span>ARTICLES</span>
 						</a>
-							<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_free_1.html" class="block"><i class="fab fa-free-code-camp"></i> <span>FREE LIST</span></a></li>
+							<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_free_1.html" class="block"><i class="fab fa-free-code-camp"></i> <span>FREE LIST</span></a></li><li><a href="article_list_it_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>IT LIST</span></a></li>
 							</ul></li>
 						<li><a class="block"> <i class="fas fa-link"></i> <span>LINK</span>
 						</a>
@@ -59,7 +59,11 @@
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
 				<h1 class="con"><i class="fas fa-file-alt"> </i><span>ARTICLE DETAIL</span></h1>
-			</section><!-- 토스트 UI 에디터, 자바스크립트 코어 -->
+			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+
+<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
 <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 
 <!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
@@ -67,15 +71,18 @@
 <!-- 토스트 UI 에디터, CSS 코어 -->
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 
+<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
+<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+
 <section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
-			<div class="article-detail__title" style="font-size: 2rem">제목1</div>
+			<div class="article-detail__title" style="font-size: 2rem">(공지사항) 최형석 블로그에 오신걸 환영합니다.</div>
 			<div class="article-detail__meta-data flex flex-jc-sb">
 				<div class="meta-data__left">
 					<span>게시판 : 공지사항</span> 
-					<span>작성일 : 2020-12-17 10:53:55</span>
-					<span>작성자 : aaa</span>
+					<span>작성일 : 2020-12-17 17:38:26</span>
+					<span>작성자 : 최형석</span>
 				</div>
 				<div class="meta-data__right">
 					<span>번호 : 1</span> 
@@ -84,21 +91,22 @@
 				</div>
 			</div>
 			
-			<div class="article-detail__body"># 공지사항
-안녕하세요.
-이 사이트는 저의 글 연재 공간입니다.
+			<div class="article-detail__body"># 최형석 IT BLOG
 
----
+## IT관련 강의 및 소식을 다룰 예정
 
-# 이 사이트의 특징
-- A
-- B
-- C</div>
+ - 주된 개발언어
+  - JAVA
+  - SQL
+  - HTML
+  - CSS
+  - JS
+  - 그외 다수</div>
 			
 			<div class="article-detail__menu flex flex-jc-c">
 				<span><a href="article_detail_0.html" class="hover-underline none">&lt; 이전 글</a></span> 
 				<span><a href="article_list_notice_1.html" class="hover-underline ">리스트</a></span> 
-				<span><a href="article_detail_2.html" class="hover-underline "> 다음 글 &gt;</a></span>
+				<span><a href="article_detail_0.html" class="hover-underline none"> 다음 글 &gt;</a></span>
 			</div>
 		</div>
 	</div>
