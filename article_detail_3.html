@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script data-ad-client="ca-pub-1326863876743891" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1326863876743891" async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERW7ELC4XM"></script>
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=G-ERW7ELC4XM"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
 
-  gtag('config', 'G-ERW7ELC4XM');
+	gtag('config', 'G-ERW7ELC4XM');
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHS BLOG</title>
@@ -18,17 +25,17 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet" href="app.css">
-<meta name="google-site-verification" content="zTEpOKXM4thR4swpUVV7lrDeZcuxGg-6unXoz2brK4I" />
+<meta name="google-site-verification"
+	content="zTEpOKXM4thR4swpUVV7lrDeZcuxGg-6unXoz2brK4I" />
 </head>
 <body>
 
 	<div class="body-content min-height-100vh flex flex-column">
 		<!-- 로고바 시작 -->
 		<header class="logo-bar con-min-width">
-			<div class="con height-100p flex flex-jc-c">
-				<a href="#" class="logo flex flex-ai-c"> <i
-					class="fab fa-jenkins"></i> <span> Develo<span>p</span>ers
-				</span>
+			<div class="con">
+				<a href="index.html" class="logo"> <span class="logo__text">MODIFY</span>
+					<i class="fas fa-tools ico"></i> <span class="logo__text">CODE</span>
 				</a>
 			</div>
 		</header>
@@ -38,33 +45,27 @@
 		<header class="menu-bar con-min-width">
 			<div class="con height-100p">
 				<nav class="menu-bar__menu-1">
-					<ul class="flex">
-						<li><a href="index.html" class="block"> <i
-								class="fas fa-home"></i> <span>HOME</span>
+					<ul class="flex flex-jc-c">
+						<li><a class="block" href="index.html"> <span>HOME</span>
 						</a></li>
-						<li><a class="block"> <i class="fas fa-list"></i> <span>ARTICLES</span>
+						<li><a class="block" href="#"> <span>ARTICLES</span>
 						</a>
 							<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_free_1.html" class="block"><i class="fab fa-free-code-camp"></i> <span>FREE LIST</span></a></li><li><a href="article_list_it_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>IT LIST</span></a></li>
 							</ul></li>
-						<li><a class="block"> <i class="fas fa-link"></i> <span>LINK</span>
-						</a>
-							<ul>
-								<li><a href="https://jhs512.github.io/blog/"
-									target="_blank" class="block"> <i class="fab fa-blogger-b"></i>
-										<span>BLOG</span>
-								</a></li>
-								<li><a href="https://github.com/" target="_blank"
-									class="block"> <i class="fab fa-github"></i> <span>GITHUB</span>
-								</a></li>
-							</ul></li>
-						<li><a href="stat.html" class="block"> <i
-								class="fas fa-chart-pie"></i> <span>STATISTICS</span>
+						<li><a class="block" href="https://qbj700.tistory.com"
+							target="_blank"> <span>BLOG</span>
 						</a></li>
+						<li><a class="block" href="https://github.com/qbj700"
+							target="_blank"> <sapn>GIT HUB</sapn>
+						</a></li>
+						<li><a class="block" href="#"><span>STATISTICS</span> </a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 		<!-- 메뉴바 끝 -->
+		
+		<div class="line"></div>
 
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
@@ -93,7 +94,7 @@
 <section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
-			<div class="article-detail__title" style="font-size: 2rem">JAVA / 2강 - 입력 받기</div>
+			<div class="article-detail__title" style="font-size: 2rem">JAVA / 2강 - 변수</div>
 			<div class="article-detail__meta-data flex flex-jc-sb">
 				<div class="meta-data__left">
 					<span>게시판 : IT</span> <span>작성일 : 2020-12-17 17:38:26</span>
@@ -105,46 +106,152 @@
 				</div>
 			</div>
 
-			<div class="article-detail__body"># JAVA 입문 2강
-- 입력 받기
+			<div class="article-detail__body">
+# 변수(variable)
+변수(variable)란 데이터(data)를 저장하기 위해 프로그램에 의해 이름을 할당받은 메모리 공간을 의미합니다.<br>
+즉, 변수란 데이터(data)를 저장할 수 있는 메모리 공간을 의미하며, 이렇게 저장된 값은 변경될 수 있습니다.
+<br>
+<br>
+<br>
+## 변수의 이름 생성 규칙
+자바에서는 변수뿐만 아니라 클래스, 메소드 등의 이름을 짓는데 반드시 지켜야 하는 공통된 규칙이 있습니다.
+<br>
+자바에서 이름을 생성할 때에 반드시 지켜야 하는 규칙은 다음과 같습니다.
+<br>
+<br>
+<br>
+1. 변수의 이름은 영문자(대소문자), 숫자, 언더스코어(_), 달러($)로만 구성할 수 있습니다.
+<br>
+2. 변수의 이름은 숫자로 시작할 수 없습니다.
+<br>
+3. 변수의 이름 사이에는 공백을 포함할 수 없습니다.
+<br>
+4. 변수의 이름으로 자바에서 미리 정의된 키워드(keyword)는 사용할 수 없습니다.
+<br>
+<br>
+<br>
+### 변수의 이름은 해당 변수에 저장될 데이터의 의미를 잘 나타내도록 짓는 것이 좋습니다.
+<br>
+<br>
+<br>
+<br>
+## 변수의 종류
+자바에서 변수는 타입에 따라 크게 다음과 같이 구분할 수 있습니다.
+<br>
+<br>
+1. 기본형(primitive type) 변수
 
-## Scanner 를 이용하여 값을 입력받기.
- - 작성 예시
+2. 참조형(reference type) 변수
+<br>
+<br>
+### 기본형(primitive type) 변수는 실제 연산에 사용되는 변수입니다.
+<br>
+### 자바에서는 다음과 같이 8가지 종류의 기본형 변수를 제공하고 있습니다. 
+<br>
+<br>
+<br>
+- 정수형 : byte, short, int, long
 
-```java
-import java.util.Scanner;
+- 실수형 : float, double
 
-public class Main {
+- 문자형 : char
 
- public static void main(String[] args) {
- Scanner scanner = new Scanner(System.in);
+- 논리형 : boolean
+<br>
+<br>
+<br>
+참조형 변수는 8개의 기본형 변수를 사용하여 사용자가 직접 만들어 사용하는 변수를 의미합니다.
+<br>
+<br>
+<br>
+
+### 변수의 선언
+자바에서는 변수를 사용하기 전에 반드시 먼저 변수를 선언하고 초기화해야 합니다.
+<br>
+변수를 선언하는 방법에는 다음과 같이 두 가지 방법이 있습니다.
+
  
- String name = scanner.nextLine();
- System.out.println(name);
- }
-}
-```
 
-"최형석" 을 입력
+1. 변수의 선언만 하는 방법
 
+2. 변수의 선언과 동시에 초기화하는 방법
+<br>
+<br>
+<br>
+#### 변수의 선언만 하는 방법
+이 방법은 먼저 변수를 선언하여 메모리 공간을 할당받고, 나중에 변수를 초기화하는 방법입니다.
+<br>
+하지만 이렇게 선언만 된 변수는 초기화되지 않았으므로, 해당 메모리 공간에는 알 수 없는 쓰레깃값만이 들어가 있습니다.
+<br>
+따라서 선언만 된 변수는 반드시 초기화한 후에 사용해야만 합니다.
+<br>
+<br>
+<br>
+자바에서는 프로그램의 안전성을 위해 초기화하지 않은 변수는 사용할 수 없도록 하고 있습니다.
+<br>
+만약 초기화되지 않은 변수를 사용하려고 하면, 자바 컴파일러는 오류를 발생시킬 것입니다.
 
- - 출력 예시
+ 
 
+### 문법
+<br>
 ```java
-최형석
+// 타입 변수이름;
 
+int num;                 // 변수의 선언
+
+System.out.println(num); // 오류 발생
+
+num = 20;                // 변수의 초기화
+
+System.out.println(num); // 20
 ```
+<br>
 
----
+위의 예제처럼 정수를 저장하기 위한 메모리 공간을 할당받으면, 반드시 해당 타입의 데이터만을 저장해야 합니다.
 
-# 설명
-Scanner 를 import 하여 사용할수 있도록 한 후
+만약 다른 타입의 데이터를 저장하려고 하면, 자바 컴파일러는 오류를 발생시킬 것입니다.
 
-new Scanner(System.in); 으로 객체 생성
+변수의 선언과 동시에 초기화하는 방법
+자바에서는 변수의 선언과 동시에 그 값을 초기화할 수 있습니다.
 
-최형석 이라는 입력을 받은후 그것을 String name 에 저장
+또한, 선언하고자 하는 변수들의 타입이 같다면 이를 동시에 선언할 수도 있습니다.
 
-name을 출력</div>
+ 
+
+### 문법
+```java
+
+// 1. 타입 변수이름[, 변수이름];
+
+// 2. 타입 변수이름 = 초깃값[, 변수이름 = 초깃값];
+
+
+int num1, num2;                  // 같은 타입의 변수를 동시에 선언함.
+
+double num3 = 3.14;              // 선언과 동시에 초기화함.
+
+double num4 = 1.23, num5 = 4.56; // 같은 타입의 변수를 동시에 선언하면서 초기화함.
+```
+ 
+
+선언하고자 하는 변수의 타입이 서로 다르면 동시에 선언할 수 없습니다.
+ 
+
+하지만 다음 예제처럼 여러 변수를 동시에 초기화할 수는 없습니다.
+
+만약 다음 예제처럼 변수의 초기화를 동시에 하려고 하면, 자바 컴파일러는 오류를 발생시킬 것입니다.
+
+ 
+
+### 잘못된 예제
+```java
+double num1, num2;        // 같은 타입의 변수를 동시에 선언함.
+
+...
+
+num1 = 1.23, num2 = 4.56; // 하지만 이미 선언된 여러 변수를 동시에 초기화할 수는 없음.
+```</div>
 
 			<div class="article-detail__reply-box">
 				<div id="disqus_thread"></div>
@@ -176,19 +283,35 @@ name을 출력</div>
 	</div>
 </section></main>
 
-<footer class="bottom-bar con-min-width">
-	<div class="con flex flex-ai-c">
-		<a href="#" class="logo logo--mini flex flex-ai-c"> <i
-			class="fab fa-jenkins"></i> <span> Develo<span>p</span>ers
-		</span>
-		</a>
+<!-- 최상단 이동 버튼 시작 -->
+<div>
+	<span class="topBtn-1">△</span> <span class="topBtn-2">top</span>
+</div>
+<!-- 최상단 이동 버튼 끝 -->
 
-		<div class="bottom-bar__site-info">Lorem ipsum dolor sit amet
-			consectetur adipisicing elit. Dolorum eos ipsum necessitatibus
-			doloremque quos voluptate debitis earum aut a consequuntur explicabo
-			deleniti qui eius facere, harum error eveniet vel laudantium.</div>
+<div class="line" style="margin-top: 20px;"></div>
+<!-- 하단바 시작 -->
+<footer class="bottom-bar con-min-width flex flex-ai-c">
+	<div class="con flex flex-ai-c">
+		<div class="bottom__logo">
+			<a href="index.html"
+				class="logo logo__mini flex flex-jc-c flex-column">
+				<div class="logo__text">MODIFY</div> <i class="fas fa-tools ico"></i>
+				<div class="logo__text">CODE</div>
+			</a>
+		</div>
+		<div class="flex-grow-1">
+			<div class="bottom-bar__site-info">
+				<div>Developer : Choi Hyeong-Seok</div>
+				<div>Email : qbj700@gmail.com</div>
+				<div>GIT HUB : github.com/qbj700</div>
+			</div>
+		</div>
+		<div class="bottom-bar__copyright">Copyright 2020. Choi
+			Hyeong-Seok All Rights Reserved.</div>
 	</div>
 </footer>
+<!-- 하단바 끝 -->
 </div>
 <script src="app.js"></script>
 </body>
