@@ -514,30 +514,6 @@ input:checked + .slider:before {
 .dsq-reaction-retweets {
 	color: var(--box-color) !important;
 }
-
-.dark .tab-conversation.active>a {
-	color: var(--heading-color) !important;
-}
-
-.dark .nav-tab>a, .dark .disqus-footer__link{
-	color: var(--secondary-color) !important;
-}
-
-.dark .nav-tab>a:hover, .dark .disqus-footer__link:hover {
-	color: var(--primary-color) !important;
-}
-
-.dark .icon-cog, .dark .icon-export, .dark .label {
-	color: var(--heading-color) !important;
-}
-
-body.dark {
-	color: var(--heading-color) !important;
-}
-
-.dark .disqus-footer__wrapper {
-	color: var(--font-color) !important;
-}
 /* disqus 설정 끝 */
 
 /* 다크모드 끝 */
