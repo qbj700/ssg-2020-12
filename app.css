@@ -492,27 +492,51 @@ input:checked + .slider:before {
 /* 토스트 UI 뷰어 끝 */
 /* disqus 설정 시작 */
 #disqus_thread {
-color: var(--bg-color) !important;
-border-style: 0px solid;
-border-color: var(--box-color) !important;
-padding: 5px;
+	color: var(--bg-color) !important;
+	border-style: 0px solid;
+	border-color: var(--box-color) !important;
+	padding: 5px;
 }
 
 #dsq-content #dsq-comments .dsq-comment-body {
-color: var(--bg-color) !important;
-background-color: var(--heading-color) !important;
+	color: var(--bg-color) !important;
+	background-color: var(--heading-color) !important;
 }
 
 .dsq-reaction-body {
-color: var(--bg-color) !important;
+	color: var(--bg-color) !important;
 }
 
 .dsq-reaction-header cite, .dsq-reaction-header span {
-color: var(--box-color) !important;
+	color: var(--box-color) !important;
 }
 
 .dsq-reaction-retweets {
-color: var(--box-color) !important;
+	color: var(--box-color) !important;
+}
+
+.dark .tab-conversation.active>a {
+	color: var(--heading-color) !important;
+}
+
+.dark .nav-tab>a, .dark .disqus-footer__link{
+	color: var(--secondary-color) !important;
+}
+
+.dark .nav-tab>a:hover, .dark .disqus-footer__link:hover {
+	color: var(--primary-color) !important;
+}
+
+.dark .icon-cog, .dark .icon-export, .dark .label {
+	color: var(--heading-color) !important;
+}
+
+body.dark {
+	color: var(--heading-color) !important;
+}
+
+.dark .disqus-footer__wrapper {
+	color: var(--font-color) !important;
 }
 /* disqus 설정 끝 */
 
