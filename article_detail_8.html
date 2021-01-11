@@ -56,7 +56,7 @@
 <meta itemprop="description" content="풀스택 개발자가 되기위한 기술/일상 관련 글들을 공유합니다." />
 <meta itemprop="image" content="https://ssg.modify.kr/image.png" />
 
-<title>MODIFY CODE | HOME</title>
+<title>JAVA / 6강 - 산술 연산자 | MODIFY CODE | ARTICLE DETAIL</title>
 
 <!-- 폰트어썸 불러오기 시작 -->
 <link rel="stylesheet"
@@ -163,52 +163,122 @@
 
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-home"></i> <span>HOME</span></h1>
-			</section><section class="section-1 con-min-width">
+				<h1 class="con"><i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span></h1>
+			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+
+<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
+<script
+	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
+<!-- 토스트 UI 에디터, CSS 코어 -->
+<link rel="stylesheet"
+	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
+<script
+	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+
+<section class="section-1 con-min-width">
 	<div class="con">
-		<div class="index-box">
-			<div class="index-box__content flex flex-jc-sb">
-				<div class="left">
-					<div class="index-text" style="color: var(--secondary-color);">
-						MODIFY 
-						<i class="fas fa-tools ico" style="color: var(--primary-color)"></i> 
-						CODE 
-						<span style="color: var(--font-color)">에 오신걸 환영합니다.</span>
-					</div>
-					<div class="index-text">MODIFY : 수정하다, 고치다</div>
-					<div class="index-text">CODE : 프로그래밍 언어로 작성된 코드</div>
-					<br>
-					<br>
-					<br>
-					<div class="index-text">스스로 코드를 작성하고,</div>
-					<br>
-					<div class="index-text">그것을 고치고, 수정하면서 성장해나가는</div>
-					<br>
-					<div class="index-text">그런 배움이 있는 블로그가 되었으면 좋겠습니다.</div>
-					<br>
-					<div class="index-text">풀스택 시니어 개발자가 되는 그날까지.</div>
-					<br>
-					<br>
-					<br>
-					<br>
-					<div class="index-text">--2020-12-21 개설--</div>
+		<div class="article-detail">
+			<div class="article-detail__title" style="font-size: 2rem">JAVA / 6강 - 산술 연산자</div>
+			<div class="article-detail__meta-data flex flex-jc-sb">
+				<div class="meta-data__left">
+					<span>게시판 : IT</span> <span>작성일 : 2021-01-11 15:20:46</span>
+					<span>작성자 : 최형석</span>
 				</div>
-				<div class="right">
-					<div class="slide">
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
-					<div class="profile">
-							<div>Name : Choi Hyeong-Seok </div>
-							<div>Birth : 1995-11-02</div>
-							<div>Hobby : Camping</div>
-							<div>Skills : JAVA / MySQL / HTML / CSS / JS</div>
-					</div>
+				<div class="meta-data__right">
+					<span>번호 : 8</span> <span>조회수 : 0</span>
+					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_8.html#disqus_thread">(Second article)</a></span>
 				</div>
+			</div>
+
+			<div class="article-detail__body"># 산술연산자
+### 부호(+,-), 증감(++,--), +,-,*,/,%
+<br>
+<br>
+- 연산식 ** x = y + z;**
+  - y와 z를 더한 값을 x에 대입한다는 것을 의미
+  - =과 + 는 연산자 = 은 대입연산자 이고, + 산술연산자 이다.
+  - y와 z 는 피연산자 이다.
+  - x = y+ z 는 연산식이다.
+  - 부호를 결정하는 부호 연산자
+<br>
+- 산술 연산을 할 수 있는 산술 연산자
+<br>
+- 1씩 증가하거나 감소 시키는 증감연산자
+<br>
+- 피 연산자가 1개인 연산자는 단항 연산자
+<br>
+  - 부호 연산자와, 증감연산자는 단항 연산자 이다.
+<br>
+<br>
+```java
+    //부호 연산자 
+    int i1 = -5;
+    int i2 = +i1;
+    int i3 = -i1;
+
+    //증감 연산자 
+    int i4 = ++i3;
+    int i5 = i3++;
+    int i6 = --i3;
+    int i7 = i3--;
+```
+<br>
+- 피연 산자 하나로 연산할 수 없는 연산자 이항 연산자
+<br>
+```java
+    int i = 5;
+    int j = 2;  
+```
+<br>
+- 2개의 변수 이용한 산술 연산
+<br>
+```java
+    System.out.println(i +  j);
+    System.out.println(i -  j);
+    System.out.println(i *  j);
+    System.out.println(i /  j);  
+    System.out.println(i %  j);  
+```</div>
+
+			<div class="article-detail__reply-box">
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function() {
+						this.page.url = 'https://ssg.modify.kr/article_detail_8.html';
+						this.page.identifier = 'article_detail_8.html';
+					};
+					(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://chs-ssg.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>
+					Please enable JavaScript to view the <a
+						href="https://disqus.com/?ref_noscript">comments powered by
+						Disqus.</a>
+				</noscript>
+			</div>
+
+			<div class="article-detail__menu flex flex-jc-c">
+				<span><a href="article_detail_7.html"
+					class="hover-underline ">&lt;
+						이전 글</a></span> <span><a href="article_list_it_1.html"
+					class="hover-underline ">리스트</a></span>
+				<span><a href="article_detail_0.html"
+					class="hover-underline none">
+						다음 글 &gt;</a></span>
 			</div>
 		</div>
 	</div>
