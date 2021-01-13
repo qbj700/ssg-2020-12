@@ -28,8 +28,8 @@
 <meta name="title" content="MODIFY CODE" />
 <meta name="keywords" content="JAVA, MySQL, HTML, CSS, JAVASCRIPT, SPRING, CODE, CODING" />
 <meta name="copyright" content="MODIFY CODE" />
-<meta name="pubdate" content="2021-01-13T15:58:49" />
-<meta name="lastmod" content="2021-01-13T15:58:49" />
+<meta name="pubdate" content="2021-01-13T16:09:04" />
+<meta name="lastmod" content="2021-01-13T16:09:04" />
 <!-- OPENGRAPH -->
 <meta property="og:site_name" content="MODIFY CODE" />
 <meta property="og:type" content="website" />
@@ -40,8 +40,8 @@
 <meta property="og:image:alt" content="ssg.modify.kr" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-01-13T15:58:49"/>
-<meta property="og:pubdate" content="2021-01-13T15:58:49" />
+<meta property="og:updated_time" content="2021-01-13T16:09:04"/>
+<meta property="og:pubdate" content="2021-01-13T16:09:04" />
 <meta property="og:url" content="https://ssg.modify.kr" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -219,12 +219,12 @@
 			</header>
 			<div class="main">
 				<div v-for="article in filtered">
-					<div class="article-list__cell-id">{{article.getId()}}</div>
-					<div class="article-list__cell-reg-date">{{article.getRegDate()}}</div>
+					<div class="article-list__cell-id">{{article.id}}</div>
+					<div class="article-list__cell-reg-date">{{article.regDate}}</div>
 					<div class="article-list__cell-writer">{{article.writer}}</div>
 					<div class="article-list__cell-title">
-						<a :href="'article_detail_' + article.getId() + '.html'" target="_blank"
-							class="hover-underline">{{article.getTitle()}}</a>
+						<a :href="'article_detail_' + article.id + '.html'" target="_blank"
+							class="hover-underline">{{article.title}}</a>
 					</div>
 				</div>
 			</div>
