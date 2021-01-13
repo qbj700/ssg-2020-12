@@ -28,8 +28,8 @@
 <meta name="title" content="MODIFY CODE" />
 <meta name="keywords" content="JAVA, MySQL, HTML, CSS, JAVASCRIPT, SPRING, CODE, CODING" />
 <meta name="copyright" content="MODIFY CODE" />
-<meta name="pubdate" content="2021-01-13T14:41:16" />
-<meta name="lastmod" content="2021-01-13T14:41:16" />
+<meta name="pubdate" content="2021-01-13T14:58:47" />
+<meta name="lastmod" content="2021-01-13T14:58:47" />
 <!-- OPENGRAPH -->
 <meta property="og:site_name" content="MODIFY CODE" />
 <meta property="og:type" content="website" />
@@ -40,8 +40,8 @@
 <meta property="og:image:alt" content="ssg.modify.kr" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-01-13T14:41:16"/>
-<meta property="og:pubdate" content="2021-01-13T14:41:16" />
+<meta property="og:updated_time" content="2021-01-13T14:58:47"/>
+<meta property="og:pubdate" content="2021-01-13T14:58:47" />
 <meta property="og:url" content="https://ssg.modify.kr" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -190,14 +190,17 @@
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
 				<h1 class="con"><i class="fas fa-search"></i> <span>ARTICLE SEARCH</span></h1>
-			</section><!-- vue 불러오기 -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+			</section><!-- VUE 상용버전, 속도와 용량이 최적화됨. -->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+<!-- VUE 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <!-- lodash 불러오기 -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 
-<section id="article-list-wrap" class="section-1 con-min-width">
+<section v-cloak id="article-list-wrap" class="section-1 con-min-width">
 	<div class="con">
 		<div class="search-bar flex flex-jc-e">
 			<span>
