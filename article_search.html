@@ -24,24 +24,25 @@
 <!-- 메타태그 정보 -->
 <!-- META -->
 <link rel="canonical" href="https://ssg.modify.kr" />
-<meta name="subject" content="풀스택 개발자 지망생의 기술/일상 블로그"/>
+<meta name="subject" content="풀스택 개발자 지망생의 기술/일상 블로그" />
 <meta name="title" content="MODIFY CODE" />
 <meta name="keywords" content="JAVA, MySQL, HTML, CSS, JAVASCRIPT, SPRING, CODE, CODING" />
 <meta name="copyright" content="MODIFY CODE" />
-<meta name="pubdate" content="2021-01-20T22:38:38" />
-<meta name="lastmod" content="2021-01-20T22:38:38" />
+<meta name="pubdate" content="2021-02-01T18:08:15" />
+<meta name="lastmod" content="2021-02-01T18:08:15" />
 <!-- OPENGRAPH -->
 <meta property="og:site_name" content="MODIFY CODE" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="풀스택 개발자 지망생의 기술/일상 블로그" />
 <meta property="og:description" content="풀스택 개발자가 되기위한 기술/일상 관련 글들을 공유합니다." />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:image" content="https://ssg.modify.kr/img/logo/logo_opengraph.png" />
+<meta property="og:image"
+	content="https://ssg.modify.kr/img/logo/logo_opengraph.png" />
 <meta property="og:image:alt" content="ssg.modify.kr" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-01-20T22:38:38"/>
-<meta property="og:pubdate" content="2021-01-20T22:38:38" />
+<meta property="og:updated_time" content="2021-02-01T18:08:15" />
+<meta property="og:pubdate" content="2021-02-01T18:08:15" />
 <meta property="og:url" content="https://ssg.modify.kr" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -85,7 +86,8 @@
 
 <!-- 토스트 UI 에디터, 자바스크립트 코어 -->
 <script
-	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"
+	defer></script>
 
 <!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
 <link rel="stylesheet"
@@ -96,101 +98,114 @@
 
 <!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
 <script
-	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js" defer></script>
-	
+	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"
+	defer></script>
+
 <link rel="stylesheet" href="app.css">
 <script src="app.js" defer></script>
-<script id="dsq-count-scr" src="//chs-ssg.disqus.com/count.js" async defer></script>
+<script id="dsq-count-scr" src="//chs-ssg.disqus.com/count.js" async
+	defer></script>
 
 </head>
 <body>
 
 	<div class="body-content min-height-100vh flex flex-column">
-	
-	<!-- 다크모드 시작 -->
-		<div class="con-min-width">
-			<div class="con switch-box">
-				<div class="theme-switch-wrapper">
-					<label class="theme-switch" for="checkbox"> 
-					<input type="checkbox" id="checkbox" />
-						<div class="slider round"></div>
-					</label> <em>Enable Dark Mode!</em>
+		<!-- 탑바 시작 -->
+		<header class="visible-md-up con-min-width">
+			<div class="top-bar nav-down flex flex-ai-c">
+				<div class="logo-bar">
+					<div class="logo-box">
+						<a href="index_1.html" class="logo"> <span class="logo__text">MODIFY</span>
+							<i class="fas fa-tools ico"></i> <span class="logo__text">CODE</span>
+						</a>
+					</div>
+				</div>
+				<div class="flex-1-0-0"></div>
+				<div class="menu-bar height-100p">
+					<nav class="menu-box height-100p">
+						<ul class="flex height-100p flex-ai-c">
+							<li><a href="article_search.html"><span>BOARDS</span> </a>
+								<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_it_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>IT LIST</span></a></li><li><a href="article_list_jsp_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>JSP LIST</span></a></li>
+								</ul></li>
+							<li><a href="#"><span>ABOUT</span></a></li>
+							<li><a href="statistics.html"><span>DATA</span></a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
-		</div>
-		
-		<script>
-		const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-		const currentTheme = localStorage.getItem('theme');
-
-		if (currentTheme) {
-		    document.documentElement.setAttribute('data-theme', currentTheme);
-		  
-		    if (currentTheme === 'dark') {
-		        toggleSwitch.checked = true;
-		    }
-		}
-
-		function switchTheme(e) {
-		    if (e.target.checked) {
-		        document.documentElement.setAttribute('data-theme', 'dark');
-		        localStorage.setItem('theme', 'dark');
-		    }
-		    else {        document.documentElement.setAttribute('data-theme', 'light');
-		          localStorage.setItem('theme', 'light');
-		    }    
-		}
-
-		toggleSwitch.addEventListener('change', switchTheme, false);</script>
-		<!-- 다크모드 끝 -->
-		<!-- 로고바 시작 -->
-		<header class="logo-bar con-min-width">
-			<div class="con">
-				<a href="index.html" class="logo"> <span class="logo__text">MODIFY</span>
-					<i class="fas fa-tools ico"></i> <span class="logo__text">CODE</span>
-				</a>
+			<div>
+				<div class="back-img">
+					<div class="con height-100p">
+						<div class="page-title-box flex flex-column">
+							<div class="page-title">
+								<span>MODIFY</span> <i class="fas fa-tools"></i> <span>CODE</span>
+							</div>
+							<div class="small-bar"></div>
+							<div class="page-subtitle">
+								<span>주니어 개발자에서 부터 시니어 개발자가 되기까지</span> <span>코딩을 공부하는 기술
+									블로그</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
-		<!-- 로고바 끝 -->
-		
-		<!-- 메뉴바 시작 -->
-		<header class="menu-bar con-min-width">
-			<div class="con height-100p">
-				<nav class="menu-bar__menu-1">
-					<ul class="flex flex-jc-c">
-						<li><a class="block" href="index.html"> <span>HOME</span>
-						</a></li>
-						<li><a class="block" href="article_all_1.html"> <span>ARTICLES</span>
+
+		<!-- 탑바 끝 -->
+		<!-- 모바일 탑바 시작 -->
+		<header class="visible-sm-down con-min-width">
+			<div class="mobile-top-bar flex">
+				<div class="mobile-logo-bar height-100p flex">
+					<div class="con flex-as-c">
+						<a href="index_1.html" class="mobile-logo"> <span
+							class="logo__text">MODIFY</span> <i class="fas fa-tools ico"></i>
+							<span class="logo__text">CODE</span>
 						</a>
-							<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_free_1.html" class="block"><i class="fab fa-free-code-camp"></i> <span>FREE LIST</span></a></li><li><a href="article_list_it_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>IT LIST</span></a></li><li><a href="article_list_jsp_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>JSP LIST</span></a></li>
+					</div>
+				</div>
+				<div class="flex-1-0-0"></div>
+				<div class="mobile-top-bar__btn-toggle-side-bar flex-as-c">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<div class="mobile-back-img">
+					<div class="con height-100p">
+						<div class="mobile-page-title-box flex flex-column">
+							<div class="mobile-page-title">
+								<span>MODIFY</span> <i class="fas fa-tools"></i> <span>CODE</span>
+							</div>
+							<div class="mobile-small-bar"></div>
+							<div class="mobile-page-subtitle">
+								<span>주니어 개발자에서 부터 시니어 개발자가 되기까지</span> <span>코딩을 공부하는 기술
+									블로그</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- 모바일 탑바 끝 -->
+		<!-- 모바일 사이드바 시작 -->
+		<div class="mobile-side-bar visible-sm-down con-min-width">
+			<div class="con mobile-menu-bar">
+				<nav class="mobile-menu-box">
+					<ul>
+						<li><a href="article_search.html">BOARD</a>
+							<ul><li><a href="article_list_notice_1.html" class="block"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li><li><a href="article_list_it_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>IT LIST</span></a></li><li><a href="article_list_jsp_1.html" class="block"><i class="fas fa-clipboard-list"></i> <span>JSP LIST</span></a></li>
 							</ul></li>
-						<li><a class="block" href="article_search.html"> <span>SEARCH</span>
-						</a>
-							</li>
-						<li><a class="block" href="#"> <span>SITE</span>
-						</a>
-							<ul><li>
-							<a class="block" href="https://qbj700.tistory.com"
-							target="_blank"> <span>BLOG</span>
-						</a></li>
-							<li><a class="block" href="https://github.com/qbj700"
-							target="_blank"> <sapn>GIT HUB</sapn>
-						</a></li>
-							</ul></li>
-						
-						<li><a class="block" href="statistics.html"><span>STATISTICS</span> </a></li>
+						<li><a href="#">ABOUT</a></li>
+						<li><a href="statistics.html">DATA</a></li>
 					</ul>
 				</nav>
 			</div>
-		</header>
-		<!-- 메뉴바 끝 -->
+		</div>
+		<!-- 모바일 사이드바 끝 -->
 
-		<div class="line"></div>
-
-		<main class="flex-grow-1">
-			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-search"></i> <span>ARTICLE SEARCH</span></h1>
-			</section><!-- VUE 상용버전, 속도와 용량이 최적화됨. -->
+		<main class="flex-1-0-0 con-min-width">
+			<div class="con"><!-- VUE 상용버전, 속도와 용량이 최적화됨. -->
 <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 
 <!-- VUE 개발버전, 도움되는 콘솔 경고를 포함. -->
@@ -200,68 +215,63 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 
-<section v-cloak id="article-list-wrap" class="section-1 con-min-width">
-	<div class="con">
-		<div class="search-bar flex flex-jc-e">
-			<span>
-				<input @input="searchKeywordInputed" :value="searchKeyword" class="clean-slide" id="age" type="text" placeholder="검색어를 입력하세요.">
-				<label for="검색">검색</label>
-			</span>
-		</div>
-		<div class="article-list">
-			<header>
-				<div>
-					<div class="article-list__cell-id">번호</div>
-					<div class="article-list__cell-reg-date">날짜</div>
-					<div class="article-list__cell-writer">작성자</div>
-					<div class="article-list__cell-title">제목</div>
-				</div>
-			</header>
-			<div class="main">
-				<div v-for="article in filtered">
-					<div class="article-list__cell-id">{{article.id}}</div>
-					<div class="article-list__cell-reg-date">{{article.regDate}}</div>
-					<div class="article-list__cell-writer">{{article.writer}}</div>
-					<div class="article-list__cell-title">
-						<a :href="'article_detail_' + article.id + '.html'" target="_blank"
-							class="hover-underline">{{article.title}}</a>
-					</div>
-				</div>
-			</div>
+<div v-cloak id="article-list-wrap" class="content-box">
+	<h5 class="recent-post">Latest Articles</h5>
+
+	<div class="search-bar flex flex-jc-e">
+		<span> <input @input="searchKeywordInputed"
+			:value="searchKeyword" class="clean-slide" id="age" type="text"
+			placeholder="검색어를 입력하세요."> <label for="검색">검색</label>
+		</span>
+	</div>
+
+	<div v-for="article in filtered">
+		<div class="post-preview">
+			<a :href="'article_detail_' + article.id + '.html'" target="_blank"
+				class="hover-underline">
+				<h2 class="post-title">{{article.title}}</h2>
+				<h3 class="post-subtitle">{{article.subtitle}}</h3>
+			</a>
+			<p class="post-meta">{{article.regDate}}, {{article.writer}}</p>
 		</div>
 	</div>
-</section>
-<script src="article_search.js"></script></main>
 
-<!-- 최상단 이동 버튼 시작 -->
-<div>
-	<span class="topBtn-1">△</span> <span class="topBtn-2">top</span>
 </div>
-<!-- 최상단 이동 버튼 끝 -->
+<script src="article_search.js"></script>
+</div>
+</main>
+<!-- 메인컨텐츠 끝 -->
 
-<div class="line" style="margin-top: 20px;"></div>
+
+<!-- 상단 이동하기 버튼 시작 -->
+<a href="#" class="btn_gotop"> <span><i
+		class="fas fa-chevron-up"></i></span>
+</a>
+<!-- 상단 이동하기 버튼 끝 -->
+
+
 <!-- 하단바 시작 -->
-<footer class="bottom-bar con-min-width flex flex-ai-c">
-	<div class="con flex flex-ai-c">
-		<div class="bottom__logo">
-			<a href="index.html"
-				class="logo logo__mini flex flex-jc-c flex-column">
-				<div class="logo__text">MODIFY</div> <i class="fas fa-tools ico"></i>
-				<div class="logo__text">CODE</div>
+<footer class="footer con-min-width">
+	<div class="con copy-info flex height-100p">
+		<div class="foot-logo">
+			<a href="index_1.html" class="logo-box logo logo__mini flex">
+				<div class="logo__text">
+					MODIFY <i class="fas fa-tools ico"></i> CODE
+				</div>
 			</a>
 		</div>
-		<div class="flex-grow-1">
-			<div class="bottom-bar__site-info">
-				<div>Developer : Choi Hyeong-Seok</div>
-				<div>Email : qbj700@gmail.com</div>
-				<div>GIT HUB : github.com/qbj700</div>
-			</div>
+		<div class="copyright">
+			© MODIFY <i class="fas fa-tools ico"></i> CODE All rights reserved
 		</div>
-		<div class="bottom-bar__copyright">Copyright 2020. Choi
-			Hyeong-Seok All Rights Reserved.</div>
+		<div class="other-site-favicons flex">
+			<a href="https://github.com/qbj700" target="_blank"><i
+				class="fab fa-github-square"></i></a> <a href="https://ssg.modify.kr"
+				target="_blank"><i class="fab fa-blogger"></i></a>
+		</div>
 	</div>
 </footer>
 <!-- 하단바 끝 -->
 </div>
+
 </body>
 </html>
