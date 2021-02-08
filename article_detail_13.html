@@ -57,7 +57,7 @@
 <meta itemprop="description" content="풀스택 개발자가 되기위한 기술/일상 관련 글들을 공유합니다." />
 <meta itemprop="image" content="https://ssg.modify.kr/image.png" />
 
-<title>JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기 | MODIFY CODE | ARTICLE DETAIL</title>
+<title>JSP / 1025 : codeup(코드업) 1025 : [기초-입출력] 정수 1개 입력받아 나누어 출력하기 | MODIFY CODE | ARTICLE DETAIL</title>
 
 <!-- 폰트어썸 불러오기 시작 -->
 <link rel="stylesheet"
@@ -209,104 +209,129 @@
 					<h5 class="recent-post"></h5><section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
-			<div class="article-detail__title">JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기</div>
+			<div class="article-detail__title">JSP / 1025 : codeup(코드업) 1025 : [기초-입출력] 정수 1개 입력받아 나누어 출력하기</div>
 			<div class="article-detail__meta-data flex flex-jc-sb">
 				<div class="meta-data__left">
-					<span>게시판 : CODE-UP</span> <span>작성일 : 2021-02-04 16:42:28</span>
+					<span>게시판 : CODE-UP</span> <span>작성일 : 2021-02-08 23:51:13</span>
 					<span>작성자 : 최형석</span>
 				</div>
 				<div class="meta-data__right">
-					<span>번호 : 11</span> <span>조회수 : 0</span>
-					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_11.html#disqus_thread">(Second article)</a></span>
+					<span>번호 : 13</span> <span>조회수 : 0</span>
+					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_13.html#disqus_thread">(Second article)</a></span>
 				</div>
 			</div>
 			
 			<script type="text/x-template">
-			## 연월일 입력받아 그대로 출력하기
-년, 월, 일을 입력받아 지정된 형식으로 출력하는 연습을 해보자.
+			## 정수 1개 입력받아 나누어 출력하기
+다섯 자리의 정수 1개를 입력받아 각 자리별로 나누어 출력한다.
+
+참고
+```c
+scanf("%1d%1d%1d%1d%1d", &a, &b, &c, &d, &e);
+```
+를 사용하면 1개의 숫자로 각각 구분되어 저장된다.
+
+예시
+읽어들인 값을 적당히 바꿔 출력하기 위해서
+```c
+printf("[%d]", a*10000);
+```
+과 같은 방법도 가능하다.
 <br>
 <br>
 ### 입력
-- 연, 월, 일이 ".(닷)"으로 구분되어 입력된다.
+- 다섯 자리로 이루어진 1개의 정수를 입력받는다.
+- (단, 10,000 <= 입력받는 수 <= 99,999 )
 <br>
 <br>
 ### 출력
-- 입력받은 연, 월, 일을 yyyy.mm.dd 형식으로 출력한다.
-- (%02d를 사용하면 2칸을 사용해 출력하는데, 한 자리 수인 경우 앞에 0을 붙여 출력한다.)
+- 각 자리의 숫자를 분리해 한 줄에 하나씩 [ ]속에 넣어 출력한다.
 <br>
 <br>
 ### 입력예시
 ```java
-2013.8.5
+75254
 ```
 <br>
 <br>
 ### 출력예시
 ```java
-2013.08.05
+[70000]
+[5000]
+[200]
+[50]
+[4]
 ```
 <br>
 <br>
 ***
 <br>
 <br>
-### 오답 제출 😭
+### 오답 제출 ????
 <br>
 ```java
 import java.util.Scanner;
 
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
+public class Main {
 
-      System.out.printf(String.format("%d.%02d.%02d",year,month,day));
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		String[] cmd = sc.nextLine().split("");
+
+		System.out.println(Integer.parseInt(cmd[0]) * 10000);
+		System.out.println(Integer.parseInt(cmd[1]) * 1000);
+		System.out.println(Integer.parseInt(cmd[2]) * 100);
+		System.out.println(Integer.parseInt(cmd[3]) * 10);
+		System.out.println(Integer.parseInt(cmd[4]) * 1);
+
+		sc.close();
 	}
+
 }
 ```
 <br>
-입력받은 날짜들을 .을 기준으로 split 하여 각자의 연, 월, 일 로 나누어준후,
+입력받은 숫자를 문자로 입력받아서 각 한자리씩 split 하여 배열에 저장했다.
 
-Integer.parseInt 를 통해서 정수형으로 저장한다.
+Integer.parseInt 를 통해서 정수형으로 자릿수에 맞춰 숫자를 곱해준후 출력을 하였으나,
 
-이후 String.format을 통해서 출력을 해주려고 하였는데, 월과 일은 0으로 자릿수 채움을 해주었는데,
+출력시에 [] 대괄호 안에 출력이 되어야하는데 그부분을 빼먹고 출력을 해버렸다.
 
-년도의 경우 당연히 4자리 년도를 생각하여서 자릿수 채움을 해주지 않았는데, 그부분에서 오류가 난듯 하였다.
+지금은 간단한 코드업 문제에서 실수가 있었지만, 
+
+추후 실무에 가게 된다면 클라이언트의 요구에 대해 이런 사소한 실수도 없어야 하기에,
+
+다음부터는 출력 예시에 맞추어 꼭 맞춰 출력하는 연습을 해야겠다.
 <br>
 <br>
 ***
 <br>
 <br>
-### 정확한 풀이 😊
+### 정확한 풀이 ????
 <br>
 ```java
 import java.util.Scanner;
 
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
+public class Main {
 
-      System.out.printf(String.format("%04d.%02d.%02d",year,month,day));
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		String[] cmd = sc.nextLine().split("");
+
+		System.out.println("["+Integer.parseInt(cmd[0]) * 10000+"]");
+		System.out.println("["+Integer.parseInt(cmd[1]) * 1000+"]");
+		System.out.println("["+Integer.parseInt(cmd[2]) * 100+"]");
+		System.out.println("["+Integer.parseInt(cmd[3]) * 10+"]");
+		System.out.println("["+Integer.parseInt(cmd[4]) * 1+"]");
+
+		sc.close();
 	}
+
 }
 ```
 <br>
-년도 부분도 0으로 자릿수 채움을 해주었더니 정확한 풀이(정풀) 이 되었다.
-
-년도는 당연히 4자리수 일거라는 안일한 생각이 오답을 부른것같다.
-
-컴퓨터 적인 사고로 문제를 들여다볼 필요가 있는 것 같다.
+오답 코드에서 [] 대괄호를 추가하여 출력 -> 정확한 풀이
 			</script>
 			<div class="article-detail__body main-font toast-ui-viewer"></div>
 
@@ -316,8 +341,8 @@ public class Main{
 				<div id="disqus_thread"></div>
 				<script>
 					var disqus_config = function() {
-						this.page.url = 'https://ssg.modify.kr/article_detail_11.html';
-						this.page.identifier = 'article_detail_11.html';
+						this.page.url = 'https://ssg.modify.kr/article_detail_13.html';
+						this.page.identifier = 'article_detail_13.html';
 					};
 					(function() { // DON'T EDIT BELOW THIS LINE
 						var d = document, s = d.createElement('script');
@@ -334,12 +359,12 @@ public class Main{
 			</div>
 
 			<div class="article-detail__menu flex flex-jc-c">
-				<span><a href="article_detail_10.html"
+				<span><a href="article_detail_11.html"
 					class="hover-underline ">&lt;
 						이전 글</a></span> <span><a href="article_list_codeup_1.html"
 					class="hover-underline ">리스트</a></span>
-				<span><a href="article_detail_13.html"
-					class="hover-underline ">
+				<span><a href="article_detail_0.html"
+					class="hover-underline none">
 						다음 글 &gt;</a></span>
 			</div>
 		</div>
