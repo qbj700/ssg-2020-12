@@ -60,7 +60,7 @@
 <meta itemprop="description" content="풀스택 개발자가 되기위한 기술/일상 관련 글들을 공유합니다." />
 <meta itemprop="image" content="https://ssg.modify.kr/image.png" />
 
-<title>JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기 | MODIFY CODE | ARTICLE DETAIL</title>
+<title>JAVA / codeup(코드업) 3015 : 성적표 출력 | MODIFY CODE | ARTICLE DETAIL</title>
 
 <!-- 폰트어썸 불러오기 시작 -->
 <link rel="stylesheet"
@@ -212,41 +212,56 @@
 					<h5 class="recent-post"></h5><section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
-			<div class="article-detail__title">JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기</div>
+			<div class="article-detail__title">JAVA / codeup(코드업) 3015 : 성적표 출력</div>
 			<div class="article-detail__meta-data flex flex-jc-sb">
 				<div class="meta-data__left">
-					<span>게시판 : CODE-UP</span> <span>작성일 : 2021-02-04 16:42:28</span>
+					<span>게시판 : CODE-UP</span> <span>작성일 : 2021-02-18 21:10:21</span>
 					<span>작성자 : 최형석</span>
 				</div>
 				<div class="meta-data__right">
-					<span>번호 : 11</span> <span>조회수 : 0</span>
-					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_11.html#disqus_thread">(Second article)</a></span>
+					<span>번호 : 15</span> <span>조회수 : 0</span>
+					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_15.html#disqus_thread">(Second article)</a></span>
 				</div>
 			</div>
 			
 			<script type="text/x-template">
-			## 연월일 입력받아 그대로 출력하기
-년, 월, 일을 입력받아 지정된 형식으로 출력하는 연습을 해보자.
+			## 성적표 출력
+세종이는 정보과학 선생님인 JH를 도와주기 위해 정보과학 성적처리 프로그램을 만들기로 했다.
+
+JH 선생님은 학생들의 명단과 점수를 입력하면 상위 m명의 학생 명단을 출력해 주기를 원한다.
+
+다음 조건을 만족하는 프로그램을 작성해 보자.
+
 <br>
 <br>
 ### 입력
-- 연, 월, 일이 ".(닷)"으로 구분되어 입력된다.
+- 첫째 줄에 데이터의 개수 n (3<=n<=100)과 출력인원 m (1<=m<=n)이 공백으로 구분되어 입력된다.
+
+- 둘째 줄부터 학생 이름과 점수(0 100)가 공백으로 구분되어 입력된다. 
+
+- 단 이름의 길이는 최대 10바이트 이내이다.
 <br>
 <br>
 ### 출력
-- 입력받은 연, 월, 일을 yyyy.mm.dd 형식으로 출력한다.
-- (%02d를 사용하면 2칸을 사용해 출력하는데, 한 자리 수인 경우 앞에 0을 붙여 출력한다.)
+- 상위 m명의 학생명단을 출력한다.
+
+- 단, 출력순서는 점수가 높은 학생이 먼저 출력되며, 점수가 같을 경우 입력 순서가 빠른 순서로 출력한다.
 <br>
 <br>
 ### 입력예시
 ```java
-2013.8.5
+4 2
+Jeon 95
+Kim 59
+Lee 90
+Bae 100
 ```
 <br>
 <br>
 ### 출력예시
 ```java
-2013.08.05
+Bae
+Jeon
 ```
 <br>
 <br>
@@ -258,28 +273,57 @@
 ```java
 import java.util.Scanner;
 
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
-      System.out.printf(String.format("%d.%02d.%02d",year,month,day));
+		int countData = sc.nextInt();
+		int printData = sc.nextInt();
+
+		String[] stName = new String[countData];
+		int[] stScore = new int[countData];
+
+		for (int i = 0; i < countData; i++) {
+			stName[i] = sc.next();
+			stScore[i] = sc.nextInt();
+		}
+		bubleSort(stScore, stName);
+
+		int highScore = stScore.length;
+
+		for (int i = 0; i < printData; i++) {
+			System.out.println(stName[highScore - 1]);
+			highScore--;
+		}
+
+		sc.close();
+	}
+
+	public static void bubleSort(int[] stScore, String[] stName) {
+		for (int i = 0; i < stScore.length; i++) {
+			for (int j = 0; j < stScore.length - i - 1; j++) {
+				if (stScore[j] > stScore[j + 1]) {
+					int temp = stScore[j + 1];
+					String temp2 = stName[j + 1];
+					stScore[j + 1] = stScore[j];
+					stName[j + 1] = stName[j];
+					stScore[j] = temp;
+					stName[j] = temp2;
+
+				}
+			}
+		}
 	}
 }
 ```
 <br>
-입력받은 날짜들을 .을 기준으로 split 하여 각자의 연, 월, 일 로 나누어준후,
+첫줄에 첫번째로 주어지는 n이 데이터의 개수(=학생수)이기 때문에 n만큼의 길이를가진  배열을 만들어 그 이후에 나올 학생들의 정보를 담으려고 했다.
 
-Integer.parseInt 를 통해서 정수형으로 저장한다.
+그리고 두번째로 주어지는 값은 출력을 해야할 데이터의 갯수이기 때문에 그 값도 stScore라는 배열의 길이 값으로 사용하였다.
 
-이후 String.format을 통해서 출력을 해주려고 하였는데, 월과 일은 0으로 자릿수 채움을 해주었는데,
+그렇게 입력된 값을 배열에 넣고 버블 정렬로 높은 점수순으로 정렬을 해주었다.
 
-년도의 경우 당연히 4자리 년도를 생각하여서 자릿수 채움을 해주지 않았는데, 그부분에서 오류가 난듯 하였다.
+그리고 가장 높은 점수를 가진 학생을 선별하여 for문을 통해 출력을 하려고 하였으나, 8번째 예제에서 오답이 나오고 말았다.
 <br>
 <br>
 ***
@@ -290,26 +334,67 @@ Integer.parseInt 를 통해서 정수형으로 저장한다.
 ```java
 import java.util.Scanner;
 
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
+class Grade {
+	public String stName;
+	public int stScore;
+}
 
-      System.out.printf(String.format("%04d.%02d.%02d",year,month,day));
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int countData = sc.nextInt();
+		int printData = sc.nextInt();
+
+		Grade[] grades = new Grade[countData];
+
+		for (int i = 0; i < countData; i++) {
+			Grade grade = new Grade();
+			grade.stName = sc.next();
+			grade.stScore = sc.nextInt();
+
+			grades[i] = grade;
+		}
+
+		for (int i = grades.length - 1; i > 0; i--) {
+			for (int j = 0; j < i; j++) {
+				if (grades[j].stScore < grades[j + 1].stScore) {
+					Grade lowScore = grades[j];
+					grades[j] = grades[j + 1];
+					grades[j + 1] = lowScore;
+				}
+			}
+		}
+		for (int i = 0; i < printData; i++) {
+			System.out.println(grades[i].stName);
+		}
+
+		sc.close();
 	}
 }
 ```
 <br>
-년도 부분도 0으로 자릿수 채움을 해주었더니 정확한 풀이(정풀) 이 되었다.
+자세히 코드를 분석해보니 배열에 문제가 있는것 같았다.
 
-년도는 당연히 4자리수 일거라는 안일한 생각이 오답을 부른것같다.
+그래서 Grade 라는 class를 별도로 만들어 dto로 사용하였고,
 
-컴퓨터 적인 사고로 문제를 들여다볼 필요가 있는 것 같다.
+똑같이 동일하게 데이터의 갯수 n과 출력할 숫자 m을 입력 받은후,
+
+n번 만큼 반복문을 통해 데이터를 집어넣고
+
+똑같이 버블 정렬 후에 m번 만큼 출력을 해주었다.
+
+오답과 다른점은 stName과 stScore를 별도의 배열로 만든것이아닌,
+
+하나의 클래스에 집어 넣어서 Grade.stName Grade.stScore으로 사용한 부분이 큰 차이점이라고 생각한다.
+
+물론 다른 방법으로도 정답이 될수 있지만, 처음 풀이에서 사용하였던 거품정렬 과정에서
+
+같은 점수인 경우에 입력순서가 빠른순으로 출력을 하여야했지만,
+
+학생 이름과 점수를 별도의 배열로 입력받았기 때문에 입력순서에도 문제가 있었던것,
+
+따라서 이름과 점수를 같이 입력받음으로 그문제를 해결하였다.
 			</script>
 			<div class="article-detail__body main-font toast-ui-viewer"></div>
 
@@ -319,8 +404,8 @@ public class Main{
 				<div id="disqus_thread"></div>
 				<script>
 					var disqus_config = function() {
-						this.page.url = 'https://ssg.modify.kr/article_detail_11.html';
-						this.page.identifier = 'article_detail_11.html';
+						this.page.url = 'https://ssg.modify.kr/article_detail_15.html';
+						this.page.identifier = 'article_detail_15.html';
 					};
 					(function() { // DON'T EDIT BELOW THIS LINE
 						var d = document, s = d.createElement('script');
@@ -337,11 +422,11 @@ public class Main{
 			</div>
 
 			<div class="article-detail__menu flex flex-jc-c">
-				<span><a href="article_detail_10.html"
+				<span><a href="article_detail_13.html"
 					class="hover-underline ">&lt;
 						이전 글</a></span> <span><a href="article_list_codeup_1.html"
 					class="hover-underline ">리스트</a></span>
-				<span><a href="article_detail_13.html"
+				<span><a href="article_detail_16.html"
 					class="hover-underline ">
 						다음 글 &gt;</a></span>
 			</div>

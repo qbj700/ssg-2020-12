@@ -60,7 +60,7 @@
 <meta itemprop="description" content="풀스택 개발자가 되기위한 기술/일상 관련 글들을 공유합니다." />
 <meta itemprop="image" content="https://ssg.modify.kr/image.png" />
 
-<title>JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기 | MODIFY CODE | ARTICLE DETAIL</title>
+<title>JSP / 커뮤니티 사이트 개발일지 [3회차] | MODIFY CODE | ARTICLE DETAIL</title>
 
 <!-- 폰트어썸 불러오기 시작 -->
 <link rel="stylesheet"
@@ -212,104 +212,81 @@
 					<h5 class="recent-post"></h5><section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article-detail">
-			<div class="article-detail__title">JAVA / codeup(코드업) 1019 : [기초-입출력] 연월일 입력받아 그대로 출력하기</div>
+			<div class="article-detail__title">JSP / 커뮤니티 사이트 개발일지 [3회차]</div>
 			<div class="article-detail__meta-data flex flex-jc-sb">
 				<div class="meta-data__left">
-					<span>게시판 : CODE-UP</span> <span>작성일 : 2021-02-04 16:42:28</span>
+					<span>게시판 : JSP</span> <span>작성일 : 2021-02-18 20:55:47</span>
 					<span>작성자 : 최형석</span>
 				</div>
 				<div class="meta-data__right">
-					<span>번호 : 11</span> <span>조회수 : 0</span>
-					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_11.html#disqus_thread">(Second article)</a></span>
+					<span>번호 : 14</span> <span>조회수 : 0</span>
+					<span>추천수 : 0</span> <span><i class="far fa-comments"></i>&nbsp<a href="https://ssg.modify.kr/article_detail_14.html#disqus_thread">(Second article)</a></span>
 				</div>
 			</div>
 			
 			<script type="text/x-template">
-			## 연월일 입력받아 그대로 출력하기
-년, 월, 일을 입력받아 지정된 형식으로 출력하는 연습을 해보자.
-<br>
-<br>
-### 입력
-- 연, 월, 일이 ".(닷)"으로 구분되어 입력된다.
-<br>
-<br>
-### 출력
-- 입력받은 연, 월, 일을 yyyy.mm.dd 형식으로 출력한다.
-- (%02d를 사용하면 2칸을 사용해 출력하는데, 한 자리 수인 경우 앞에 0을 붙여 출력한다.)
-<br>
-<br>
-### 입력예시
-```java
-2013.8.5
-```
-<br>
-<br>
-### 출력예시
-```java
-2013.08.05
-```
+			# JSP 커뮤니티 개발일지 / 진행현황
+### 2021-02-18 (목)
+
+
+# 완료리스트
+
+### 시스템 구조 관련
+- [x] 프레임워크 기초
+- [x] 인터셉터
+- [x] 인터셉터에 의해 로그인 필요로 저지당한경우, 로그인 성공시 원래 목적지로 다시 이동
+- [x] attr 서비스 도입
+- [x] tomcat7 maven plugin 이용하여 간단 배포 적용
+- [x] server 운영 모드일때 context path 제거 / server DB명 변경
+- [x] WEB 에서 바로 JSP 파일에 접근 못하도록 수정
+
+### 회원관련
+- [x] 로그인/로그아웃
+- [x] 회원가입
+- [x] 로그인/로그아웃 상태 관련 권한체크
+- [x] 비밀번호 암호화
+- [x] 아이디찾기
+- [x] 비번찾기(임시패스워드 발송)
+- [x] 회원정보 수정
+- [x] 임시비밀번호 사용시 경고 출력
+- [x] 비밀번호 변경후 90일 경과시 경고 출력
+
+### 게시물 관련
+- [x] 게시글 CRUD
+- [x] 게시물 수정/삭제 관련 권한체크
+- [x] 게시물 검색
+- [x] 게시물 페이징
+- [x] 토스트 에디터 붙이기
+- [x] 댓글
+- [x] 좋아요, 싫어요
+
+# 당장 할일 리스트
+- [ ] 게시물 블라인드
+- [ ] 대댓글
+- [ ] 댓글, ajax화
+- [ ] 댓글 좋아요, 싫어요
+
+# 추후 할일 리스트
+- [ ] 댓글멘션
+- [ ] 내 글에 새 댓글 알림
+- [ ] 내 댓글에 추가 댓글 알림
+- [ ] 태그
+- [ ] 파일업로드
+- [ ] 회원인증
+- [ ] 관리자페이지
+- [ ] 1:1 쪽지
+- [ ] 신고
+
+
 <br>
 <br>
 ***
 <br>
 <br>
-### 오답 제출 😭
-<br>
-```java
-import java.util.Scanner;
-
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
-
-      System.out.printf(String.format("%d.%02d.%02d",year,month,day));
-	}
-}
+### 개발 진행상황 및 구현기능 시연 동영상
+```youtube
+WY9w142qiZ0
 ```
-<br>
-입력받은 날짜들을 .을 기준으로 split 하여 각자의 연, 월, 일 로 나누어준후,
-
-Integer.parseInt 를 통해서 정수형으로 저장한다.
-
-이후 String.format을 통해서 출력을 해주려고 하였는데, 월과 일은 0으로 자릿수 채움을 해주었는데,
-
-년도의 경우 당연히 4자리 년도를 생각하여서 자릿수 채움을 해주지 않았는데, 그부분에서 오류가 난듯 하였다.
-<br>
-<br>
-***
-<br>
-<br>
-### 정확한 풀이 😊
-<br>
-```java
-import java.util.Scanner;
-
-public class Main{
-	public static void main (String[] args) {
-	    Scanner sc = new Scanner(System.in);
-	    
-	    String[] commandBits = sc.nextLine().split("\\.");
-	    
-	    int year = Integer.parseInt(commandBits[0]);
-	    int month = Integer.parseInt(commandBits[1]);
-	    int day = Integer.parseInt(commandBits[2]);
-
-      System.out.printf(String.format("%04d.%02d.%02d",year,month,day));
-	}
-}
-```
-<br>
-년도 부분도 0으로 자릿수 채움을 해주었더니 정확한 풀이(정풀) 이 되었다.
-
-년도는 당연히 4자리수 일거라는 안일한 생각이 오답을 부른것같다.
-
-컴퓨터 적인 사고로 문제를 들여다볼 필요가 있는 것 같다.
 			</script>
 			<div class="article-detail__body main-font toast-ui-viewer"></div>
 
@@ -319,8 +296,8 @@ public class Main{
 				<div id="disqus_thread"></div>
 				<script>
 					var disqus_config = function() {
-						this.page.url = 'https://ssg.modify.kr/article_detail_11.html';
-						this.page.identifier = 'article_detail_11.html';
+						this.page.url = 'https://ssg.modify.kr/article_detail_14.html';
+						this.page.identifier = 'article_detail_14.html';
 					};
 					(function() { // DON'T EDIT BELOW THIS LINE
 						var d = document, s = d.createElement('script');
@@ -337,12 +314,12 @@ public class Main{
 			</div>
 
 			<div class="article-detail__menu flex flex-jc-c">
-				<span><a href="article_detail_10.html"
+				<span><a href="article_detail_12.html"
 					class="hover-underline ">&lt;
-						이전 글</a></span> <span><a href="article_list_codeup_1.html"
+						이전 글</a></span> <span><a href="article_list_jsp_1.html"
 					class="hover-underline ">리스트</a></span>
-				<span><a href="article_detail_13.html"
-					class="hover-underline ">
+				<span><a href="article_detail_0.html"
+					class="hover-underline none">
 						다음 글 &gt;</a></span>
 			</div>
 		</div>
