@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>2025 오사카 가족여행 일정표 (Smooth)</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .title-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    .notice {
+      background-color: #e3f2fd;
+      border-left: 5px solid #1e88e5;
+      padding: 16px;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+    .notice a {
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: '✔️';
+      margin-right: 8px;
+      color: #1e88e5;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin: 30px 0 10px;
+    }
+    .tab-button {
+      flex: 1;
+      padding: 10px;
+      background: #f0f0f0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .tab-button.active {
+      background: #1e88e5;
+      color: white;
+    }
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tab-content {
+      display: none;
+      opacity: 0;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      animation: fadeInTab 0.3s ease;
+    }
+    .accordion {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .accordion-header {
+      padding: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #f0f0f0;
+      transition: background 0.3s ease;
+    }
+    .accordion-header:hover {
+      background: #e0e0e0;
+    }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion-body.open {
+      max-height: 1000px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #fdfdfd;
+    }
+    .tip {
+      background: #fff8e1;
+      border-left: 4px solid #ffb300;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+    .map-links {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="./osaka.webp" alt="오사카 타이틀 이미지" class="title-img"/>
+
+  <div class="notice">
+    🇯🇵 <a href="https://services.digital.go.jp/ko/visit-japan-web/" target="_blank">Visit Japan Web 등록 바로가기 →</a><br/>
+    입국 전 필수 등록 사이트 – 공항에서 빠르게 입국하세요!
+  </div>
+
+  <h1>✈️ 2025 오사카 가족여행 일정표</h1>
+
+  <h2>✅ 기본 정보 요약</h2>
+  <ul>
+    <li>🛏️ 숙소: 2-chōme-14-17 Hanazonokita, Nishinari Ward (📍신이마미야역 도보권)</li>
+    <li>🧳 1팀: 4/30 입국 ~ 5/4 출국 / 2팀: 5/1 입국 ~ 5/4 출국</li>
+    <li>👨‍👩‍👧‍👦 총 7명 (어른 4, 유아 1, 아동 2)</li>
+    <li>👣 일정 범위: <strong>5월 1일(목) ~ 5월 4일(일)</strong> (3박 4일)</li>
+  </ul>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab(0)">5/1 (목)</button>
+    <button class="tab-button" onclick="openTab(1)">5/2 (금)</button>
+    <button class="tab-button" onclick="openTab(2)">5/3 (토)</button>
+    <button class="tab-button" onclick="openTab(3)">5/4 (일)</button>
+  </div>
+
+  <div id="tab-contents"></div>
+
+  <script>
+    const days = [
+      {
+        date: "🟡 5월 1일 (목)",
+        content: `
+          <table><tr><th>시간</th><th>일정</th></tr>
+          <tr><td>10:30</td><td>2팀 간사이공항 도착</td></tr>
+          <tr><td>11:00</td><td>🚆 공항 → 숙소 이동</td></tr>
+          <tr><td>12:00</td><td>숙소 집결 (짐 정리 및 휴식)</td></tr>
+          <tr><td>12:30</td><td>🚆 신이마미야역 → 나라역 이동 (JR 약 50분)</td></tr>
+          <tr><td>13:30</td><td>🏯 <a href="https://maps.app.goo.gl/jZrcETPFKZKPLnT79" target="_blank">코후쿠지</a> 관람</td></tr>
+          <tr><td>14:10</td><td>🦌 사슴공원 산책하며 도다이지 이동</td></tr>
+          <tr><td>14:30</td><td>🏯 <a href="https://maps.app.goo.gl/gwC9qR5ikSXZfBEGA" target="_blank">도다이지</a> 대불전 관람</td></tr>
+          <tr><td>15:30</td><td>🍡 나카타니도 떡 간식</td></tr>
+          <tr><td>16:00</td><td>🚆 (선택) 오사카성 이동</td></tr>
+          <tr><td>17:00</td><td>🏯 <a href="https://maps.app.goo.gl/XcZwYRFxW71KrY269" target="_blank">오사카성</a> 외부 구경</td></tr>
+          <tr><td>18:30</td><td>🍽️ 저녁: 신세카이 야키니쿠 or 오코노미야키</td></tr>
+          <tr><td>20:00</td><td>숙소 귀환 및 휴식</td></tr></table>
+          <div class="tip">✅ 체력에 따라 오사카성 생략 가능</div>`
+      },
+      {
+        date: "🟢 5월 2일 (금)",
+        content: `
+          <table><tr><th>시간</th><th>일정</th></tr>
+          <tr><td>07:30</td><td>기상 및 아침식사</td></tr>
+          <tr><td>08:30</td><td>🚆 신이마미야역 → 교토역 이동</td></tr>
+          <tr><td>10:30</td><td><a href="https://maps.app.goo.gl/hPsidwyQ8yTyXopS8" target="_blank">기요미즈데라</a> 도착</td></tr>
+          <tr><td>11:00</td><td>👘 기모노 체험 시작</td></tr>
+          <tr><td>12:00</td><td>🍱 점심: 이시베코지 요시무라</td></tr>
+          <tr><td>13:00</td><td>🌸 <a href="https://maps.app.goo.gl/5gNvpgvC3n9kocaeA" target="_blank">산넨자카</a>/<a href="https://maps.app.goo.gl/RXnaenouV8jE4Vxd8" target="_blank">니넨자카</a> 산책</td></tr>
+          <tr><td>14:30</td><td>🚆 오사카항 이동</td></tr>
+          <tr><td>16:00</td><td>🐠 <a href="https://maps.app.goo.gl/nbteipcqrzSZf5yEA" target="_blank">해유관(카이유칸)</a> 관람</td></tr>
+          <tr><td>18:00</td><td>🍴 텐포잔 마켓플레이스 저녁</td></tr>
+          <tr><td>19:00</td><td>숙소 복귀</td></tr></table>
+		  <div class="tip">✅ 교토에서 오사카항 이동은 약 1시간 예상. 이동 시 시간 관리 주의.</div>`
+
+      },
+      {
+        date: "🔵 5월 3일 (토)",
+        content: `
+          <table><tr><th>시간</th><th>일정</th></tr>
+          <tr><td>07:30</td><td>기상 및 아침식사</td></tr>
+          <tr><td>08:30</td><td>🚆 우메다 이동</td></tr>
+          <tr><td>09:00</td><td>🏙️ <a href="https://maps.app.goo.gl/3irJXNDsxR57ZEjk7" target="_blank">우메다 스카이빌딩</a> 관람</td></tr>
+          <tr><td>10:30</td><td>🎡 <a href="https://maps.app.goo.gl/uC5wcZSy1TL63eyJ7" target="_blank">헵파이브 관람차</a></td></tr>
+          <tr><td>12:00</td><td>🍴 점심: 백화점 식당가</td></tr>
+          <tr><td>13:30</td><td>🚆 신사이바시 이동</td></tr>
+          <tr><td>14:00</td><td>🛍️ 상점가 쇼핑</td></tr>
+          <tr><td>18:00</td><td>🍴 저녁: 다루마 or 크레이지스파이스</td></tr>
+          <tr><td>19:30</td><td>🚤 <a href="https://maps.app.goo.gl/ixcS7ztAaC4tQcST8" target="_blank">오사카 원더크루즈</a></td></tr>
+          <tr><td>20:00</td><td>숙소 복귀</td></tr></table>
+		  <div class="tip">✅ 주유패스 범위 내 모든 이동/시설 무료.</div>`
+      },
+      {
+        date: "🔴 5월 4일 (일)",
+        content: `
+          <table><tr><th>시간</th><th>일정</th></tr>
+          <tr><td>06:30</td><td>기상 및 체크아웃 준비</td></tr>
+          <tr><td>07:30</td><td>🚕 공항 이동</td></tr>
+          <tr><td>08:30</td><td>공항 도착 및 아침식사</td></tr>
+          <tr><td>11:00 / 11:50</td><td>✈️ 2팀 & 1팀 출국</td></tr></table>`
+      }
+    ];
+
+    const container = document.getElementById("tab-contents");
+    days.forEach((d, i) => {
+      const tab = document.createElement("div");
+      tab.className = "tab-content" + (i === 0 ? " active" : "");
+      tab.innerHTML = `
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggleAccordion(this)">${d.date} 📅 일정 보기 / 접기</div>
+          <div class="accordion-body${i === 0 ? ' open' : ''}">${d.content}</div>
+        </div>
+      `;
+      container.appendChild(tab);
+    });
+
+    function openTab(index) {
+      const tabs = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach((btn, i) => btn.classList.toggle('active', i === index));
+      contents.forEach((tab, i) => {
+        const body = tab.querySelector('.accordion-body');
+        if (i === index) {
+          tab.classList.add('active');
+          body.classList.add('open');
+          tab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          tab.classList.remove('active');
+          body.classList.remove('open');
+        }
+      });
+    }
+
+    function toggleAccordion(header) {
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+
+    // 초기 첫 탭 자동 확장 및 애니메이션
+    window.addEventListener('DOMContentLoaded', () => openTab(0));
+  </script>
+</body>
+</html>
